@@ -1,4 +1,4 @@
-package guru.qa;
+package programm;
 
 public class PrimitivesAndCalculations {
     public static void main (String[] args) {
