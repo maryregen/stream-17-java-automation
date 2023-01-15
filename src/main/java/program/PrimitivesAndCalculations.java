@@ -1,4 +1,4 @@
-package programm;
+package program;
 
 public class PrimitivesAndCalculations {
     public static void main (String[] args) {
