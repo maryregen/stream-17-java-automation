@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeAll;
 import pages.CheckingFormPage;
 
 public class TestBase {
-    CheckingFormPage checkingFormPage = new CheckingFormPage();
 
     @BeforeAll
     static void beforeAll (){
