@@ -23,7 +23,6 @@ public class SelenideFilesTest {
     @BeforeAll
     static void selenideParseFilesFromZIP() throws IOException {
 
-        //File zipFile = new File("src/test/resources/example.zip");
         try (
                 InputStream stream = cl.getResourceAsStream("example.zip");
                 ZipInputStream zis = new ZipInputStream(stream)
