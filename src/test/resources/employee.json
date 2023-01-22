@@ -1,0 +1,9 @@
+{
+  "name": "Alex Melon",
+  "address": {
+    "street": "32, Laham St.",
+    "city": "Innsbruck",
+    "country": "Austria"
+  },
+  "role": ["Dev", "DBA"]
+}
