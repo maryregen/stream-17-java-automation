@@ -15,15 +15,20 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SearchGoodsOnWB {
+
+    @BeforeEach
+    void beforeEach(){
+        open ("https://www.wildberries.ru");
+    }
+
     @CsvSource({
-            "корм для кошек, 45 693",
-            "корм для собак, 38 988"
+            "корм для кошек, 47 377",
+            "корм для собак, 39 921"
     })
 
     @Tags({@Tag("Blocker"), @Tag("UI_TEST")})
     @ParameterizedTest (name = "По запросу {0} на сайте WB нашлось {1} товаров")
     void searchGoodsOnWB(String goods, String amount) {
-        open ("https://www.wildberries.ru");
         $("#searchInput").setValue(goods).pressEnter();
         $("h1.searching-results__title").shouldBe(visible, Duration.ofSeconds(10)).shouldHave(Condition.text("По запросу «" + goods + "» найдено"));
         $("span[data-link=\"html{spaceFormatted:pagerModel.totalItems}\"]").shouldHave(Condition.text(amount));
@@ -44,7 +49,6 @@ public class SearchGoodsOnWB {
     @Tags({@Tag("Blocker"), @Tag("UI_TEST")})
     @ParameterizedTest (name = "Валюта {0} на сайте WB это {1}")
     void costDependsOnСurrency(Currency currency, String description){
-        open ("https://www.wildberries.ru");
         $(".simple-menu__link--country").hover();
         $("div.j-b-change-currency")
                 .$$(".radio-with-text__text")
