@@ -20,11 +20,11 @@ public class CheckIssueName {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open("https://github.com");
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
+        $(".header-search-input").sendKeys(REPOSITORY);
         $(".header-search-input").submit();
-        $(linkText("eroshenkoam/allure-example")).click();
+        $(linkText(REPOSITORY)).click();
         $("#issues-tab").click();
-        $(withText("issue_to_test_allure_report")).should(Condition.exist);
+        $(withText(ISSUE_NAME)).should(Condition.exist);
     }
 
     @Test
@@ -35,14 +35,14 @@ public class CheckIssueName {
         });
         step("Найти репозиторий " + REPOSITORY + " и перейти в него", () -> {
             $(".header-search-input").click();
-            $(".header-search-input").sendKeys("eroshenkoam/allure-example");
+            $(".header-search-input").sendKeys(REPOSITORY);
             $(".header-search-input").submit();
-            $(linkText("eroshenkoam/allure-example")).click();
+            $(linkText(REPOSITORY)).click();
             $("#issues-tab").click();
         });
 
         step("Проверить название задачи" + ISSUE_NAME + " в репозитории " + REPOSITORY, () -> {
-            $(withText("issue_to_test_allure_report")).should(Condition.exist);
+            $(withText(ISSUE_NAME)).should(Condition.exist);
         });
     }
 
@@ -50,8 +50,8 @@ public class CheckIssueName {
     public void testCheckIssueNameUsingAnnotatedSteps(){
         SelenideLogger.addListener("allure", new AllureSelenide());
         AnnotatedSteps steps = new AnnotatedSteps();
-        steps.openMainPage();
-        steps.findRepositoryAndClick();
-        steps.checkIssueName();
+        steps.openMainPage(REPOSITORY);
+        steps.findRepositoryAndClick(REPOSITORY, ISSUE_NAME);
+        steps.checkIssueName(ISSUE_NAME);
     }
 }
