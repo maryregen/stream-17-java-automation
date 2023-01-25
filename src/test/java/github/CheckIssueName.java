@@ -51,7 +51,7 @@ public class CheckIssueName {
         SelenideLogger.addListener("allure", new AllureSelenide());
         AnnotatedSteps steps = new AnnotatedSteps();
         steps.openMainPage(REPOSITORY);
-        steps.findRepositoryAndClick(REPOSITORY, ISSUE_NAME);
+        steps.findRepositoryAndClick(REPOSITORY);
         steps.checkIssueName(ISSUE_NAME);
     }
 }

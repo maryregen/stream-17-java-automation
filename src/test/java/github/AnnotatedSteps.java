@@ -16,7 +16,7 @@ public class AnnotatedSteps {
     }
 
     @Step("Найти репозиторий {repo}  и перейти в него")
-    public void findRepositoryAndClick(String repo, String issueName) {
+    public void findRepositoryAndClick(String repo) {
         $(".header-search-input").click();
         $(".header-search-input").sendKeys(repo);
         $(".header-search-input").submit();
