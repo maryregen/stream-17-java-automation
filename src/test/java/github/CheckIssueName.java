@@ -3,6 +3,7 @@ package github;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -41,7 +42,7 @@ public class CheckIssueName {
             $("#issues-tab").click();
         });
 
-        step("Проверить название задачи" + ISSUE_NAME + " в репозитории " + REPOSITORY, () -> {
+        step("Проверить название задачи " + ISSUE_NAME + " в репозитории " + REPOSITORY, () -> {
             $(withText(ISSUE_NAME)).should(Condition.exist);
         });
     }
@@ -50,7 +51,7 @@ public class CheckIssueName {
     public void testCheckIssueNameUsingAnnotatedSteps(){
         SelenideLogger.addListener("allure", new AllureSelenide());
         AnnotatedSteps steps = new AnnotatedSteps();
-        steps.openMainPage(REPOSITORY);
+        steps.openMainPage();
         steps.findRepositoryAndClick(REPOSITORY);
         steps.checkIssueName(ISSUE_NAME);
     }

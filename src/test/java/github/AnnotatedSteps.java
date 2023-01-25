@@ -11,7 +11,7 @@ import static org.openqa.selenium.By.linkText;
 public class AnnotatedSteps {
 
     @Step("Открыть главную страницу")
-    public void openMainPage(String repository) {
+    public void openMainPage() {
         open("https://github.com");
     }
 
@@ -24,7 +24,7 @@ public class AnnotatedSteps {
         $("#issues-tab").click();
     }
 
-    @Step("Проверить название задачи {issue} в репозитории {repo}")
+    @Step("Проверить название задачи {issue}")
     public void checkIssueName(String issue) {
         $(withText(issue)).should(Condition.exist);
     }
