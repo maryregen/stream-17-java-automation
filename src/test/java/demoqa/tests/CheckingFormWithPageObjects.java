@@ -1,7 +1,7 @@
-package demoqa;
+package demoqa.tests;
 
 import org.junit.jupiter.api.Test;
-import pages.CheckingFormPage;
+import demoqa.pages.CheckingFormPage;
 
 import java.io.File;
 import java.time.Month;

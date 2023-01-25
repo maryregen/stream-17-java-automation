@@ -1,7 +1,7 @@
-package pages;
+package demoqa.pages;
 
-import pages.components.CalendarComponent;
-import pages.components.RegistrationResultsModal;
+import demoqa.components.CalendarComponent;
+import demoqa.components.RegistrationResultsModal;
 
 import java.io.File;
 
