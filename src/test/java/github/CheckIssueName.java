@@ -2,7 +2,9 @@ package github;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Story;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -16,6 +18,8 @@ public class CheckIssueName {
     public static final String REPOSITORY = "eroshenkoam/allure-example";
     public static final String ISSUE_NAME = "issue_to_test_allure_report";
     @Test
+    @Story("Проверка названия задачи на github")
+    @DisplayName("Тест на проверку задачи с использованием Listener")
     public void testCheckIssueNameUsingListener (){
         SelenideLogger.addListener("allure", new AllureSelenide());
         open("https://github.com");
@@ -28,6 +32,8 @@ public class CheckIssueName {
     }
 
     @Test
+    @Story("Проверка названия задачи на github")
+    @DisplayName("Тест на проверку задачи с использованием step")
     public void testCheckIssueNameUsingSteps(){
         SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открыть главную страницу", () -> {
@@ -47,6 +53,8 @@ public class CheckIssueName {
     }
 
     @Test
+    @Story("Проверка названия задачи на github")
+    @DisplayName("Тест на проверку задачи с использованием аннотации Step")
     public void testCheckIssueNameUsingAnnotatedSteps(){
         SelenideLogger.addListener("allure", new AllureSelenide());
         AnnotatedSteps steps = new AnnotatedSteps();
