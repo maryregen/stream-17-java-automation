@@ -9,5 +9,5 @@ public class Employee {
         public String city;
         public String country;
     }
-    public String[] role = {"Dev", "DBA"};
+    public String[] role;
 }
