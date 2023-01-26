@@ -64,11 +64,9 @@ public class CheckingFormPage {
         return this;
     }
 
-    public CheckingFormPage subjectsInput(String letters, String subject)
+    public CheckingFormPage subjectsInput(String subject)
     {
-        $("#subjectsInput").setValue(letters);
-        $(byText(subject)).click();
-
+        $("#subjectsInput").setValue(subject).pressEnter();
         return this;
     }
     public CheckingFormPage chooseHobbies(String value)

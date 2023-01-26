@@ -44,7 +44,7 @@ public class CheckingFormWithPageObjects extends TestBase {
         // Choose Date of Birth
                 .chooseDateOfBirth(dateOfBirth, stringOfMonth, yearOfBirth)
         // Input Subjects
-                .subjectsInput(letters, subject)
+                .subjectsInput(letters)
         // Choose Hobbies (one, two or all)
                 .chooseHobbies(hobby)
         // Upload Picture
