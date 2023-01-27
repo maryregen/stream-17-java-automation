@@ -43,3 +43,9 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
 }
+
+task run_tests(type: Test) {
+    useJUnitPlatform{
+        includeTags("Jenkins")
+    }
+}

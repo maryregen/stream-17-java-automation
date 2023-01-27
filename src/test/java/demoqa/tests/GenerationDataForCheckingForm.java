@@ -1,8 +1,10 @@
 package demoqa.tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class GenerationDataForCheckingForm extends TestBase {
+    @Tag("Jenkins")
     @Test
     public void fillForm() {
         // 1. Fill all areas at form
