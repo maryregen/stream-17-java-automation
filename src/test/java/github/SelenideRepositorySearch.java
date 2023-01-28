@@ -12,7 +12,7 @@ public class SelenideRepositorySearch {
         //открыть страницу
         open("https://www.github.com/");
         //вввести в поле поиска
-        $("[data-test-selector=nav-search-input]").setValue("selenide").pressEnter();
+        $("[data-scoped-placeholder=Search]").setValue("selenide").pressEnter();
         //кликнуть на первый репозиторий из списка найденных
         $$("ul.repo-list li").first().$("a").click();
         //проверить заголовок selenide/selenide
