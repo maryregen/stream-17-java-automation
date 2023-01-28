@@ -1,4 +1,7 @@
 # Project exclude paths
+.DS_Store
+/bin/
+/allure-results/
 /.gradle/
 /build/
 /build/classes/java/main/
