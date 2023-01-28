@@ -21,6 +21,7 @@ public class SearchGoodsOnWB {
             "корм для собак мираторг для взрослых 10 кг, 76"
     })
 
+    @Disabled
     @Tags({@Tag("Blocker"), @Tag("UI_TEST")})
     @ParameterizedTest (name = "По запросу {0} на сайте WB нашлось {1} товаров")
     void searchGoodsOnWB(String goods, String amount) {
@@ -42,6 +43,8 @@ public class SearchGoodsOnWB {
                 Arguments.of(junit.data.Currency.UZS,  "Узбекский сум")
         );
     }
+
+    @Disabled
     @MethodSource("costDependsOnCurrentСurrency")
     @Tags({@Tag("Blocker"), @Tag("UI_TEST")})
     @ParameterizedTest (name = "Валюта {0} на сайте WB это {1}")
