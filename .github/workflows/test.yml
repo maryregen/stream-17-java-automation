@@ -9,9 +9,6 @@ name: Java Automation Tests CI
 
 on: [push]
 
-permissions:
-  contents: read
-
 jobs:
   test:
     # Где запускаем
